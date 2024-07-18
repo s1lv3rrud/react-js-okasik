@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/main.css";
 
@@ -15,11 +16,12 @@ const generateStars = (count) => {
 };
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div className="background d-flex flex-column justify-content-center align-items-center vh-100">
       {generateStars(100)}
-      <h1 className="grandiflora-one-regular text-left">잘먹어요</h1>
-      <h1 className="grandiflora-one-regular text-right">아가씨</h1>
+      <h1 className="logo-text text-left">잘먹어요</h1>
+      <h1 className="logo-text text-right">아가씨</h1>
       <div className="mb-4"></div>
       <button type="button" className="btn login-button">
         <img
@@ -28,7 +30,11 @@ const Home = () => {
           className="kakao-login-button-image"
         />
       </button>
-      <button type="button" className="btn btn-light login-button">
+      <button
+        type="button"
+        className="btn btn-light login-button"
+        onClick={() => navigate("/story")}
+      >
         🧑‍🍳 로그인 없이 시작하기
       </button>
     </div>
