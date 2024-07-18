@@ -56,42 +56,47 @@ const StoryCard = () => {
         </p>
       </div>
       <div className="menu-buttons">
-      <button
+        <button
           className={`btn menu-button ${
             activeButtons.includes("전체") ? "active" : "btn-light"
           }`}
           onClick={() => handleButtonClick("전체")}
         >
           전체
-        </button><button
+        </button>
+        <button
           className={`btn menu-button ${
             activeButtons.includes("한식") ? "active" : "btn-light"
           }`}
           onClick={() => handleButtonClick("한식")}
         >
           한식
-        </button><button
+        </button>
+        <button
           className={`btn menu-button ${
             activeButtons.includes("중식") ? "active" : "btn-light"
           }`}
           onClick={() => handleButtonClick("중식")}
         >
           중식
-        </button><button
+        </button>
+        <button
           className={`btn menu-button ${
             activeButtons.includes("일식") ? "active" : "btn-light"
           }`}
           onClick={() => handleButtonClick("일식")}
         >
           일식
-        </button><button
+        </button>
+        <button
           className={`btn menu-button ${
             activeButtons.includes("양식") ? "active" : "btn-light"
           }`}
           onClick={() => handleButtonClick("양식")}
         >
           양식
-        </button><button
+        </button>
+        <button
           className={`btn menu-button ${
             activeButtons.includes("기타") ? "active" : "btn-light"
           }`}
