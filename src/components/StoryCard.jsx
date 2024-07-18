@@ -40,7 +40,7 @@ const StoryCard = () => {
         const newActiveButtons = prev.includes(button)
           ? prev.filter((b) => b !== button)
           : [...prev.filter((b) => b !== "전체"), button];
-        return newActiveButtons.length === 0 ? ["전체"] : newActiveButtons;
+        return newActiveButtons.length === 0 ||  newActiveButtons.length === 5? ["전체"] : newActiveButtons;
       });
     }
   };
