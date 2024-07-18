@@ -32,6 +32,11 @@
     background-color: #96C9F4;
 }
 
+.menu-button.active {
+    background-color: #96C9F4;
+    color: white;
+  }
+
 .card-footer {
   font-family: "Diphylleia", serif;
   font-weight: 400;

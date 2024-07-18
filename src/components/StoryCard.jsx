@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/StoryCard.css";
 import man01 from "../assets/images/man01.jpg";
@@ -30,6 +30,21 @@ const images = [
 const StoryCard = () => {
   const randomImage = images[Math.floor(Math.random() * images.length)];
 
+  const [activeButtons, setActiveButtons] = useState(["전체"]);
+
+  const handleButtonClick = (button) => {
+    if (button === "전체") {
+      setActiveButtons(["전체"]);
+    } else {
+      setActiveButtons((prev) => {
+        const newActiveButtons = prev.includes(button)
+          ? prev.filter((b) => b !== button)
+          : [...prev.filter((b) => b !== "전체"), button];
+        return newActiveButtons.length === 0 ? ["전체"] : newActiveButtons;
+      });
+    }
+  };
+
   return (
     <div className="card">
       <img src={randomImage} className="card-img-top" />
@@ -41,16 +56,51 @@ const StoryCard = () => {
         </p>
       </div>
       <div className="menu-buttons">
-        <button className="btn btn-light menu-button">전체</button>
-        <button className="btn btn-light menu-button">한식</button>
-        <button className="btn btn-light menu-button">중식</button>
-        <button className="btn btn-light menu-button">일식</button>
-        <button className="btn btn-light menu-button">양식</button>
-        <button className="btn btn-light menu-button">기타</button>
+      <button
+          className={`btn menu-button ${
+            activeButtons.includes("전체") ? "active" : "btn-light"
+          }`}
+          onClick={() => handleButtonClick("전체")}
+        >
+          전체
+        </button><button
+          className={`btn menu-button ${
+            activeButtons.includes("한식") ? "active" : "btn-light"
+          }`}
+          onClick={() => handleButtonClick("한식")}
+        >
+          한식
+        </button><button
+          className={`btn menu-button ${
+            activeButtons.includes("중식") ? "active" : "btn-light"
+          }`}
+          onClick={() => handleButtonClick("중식")}
+        >
+          중식
+        </button><button
+          className={`btn menu-button ${
+            activeButtons.includes("일식") ? "active" : "btn-light"
+          }`}
+          onClick={() => handleButtonClick("일식")}
+        >
+          일식
+        </button><button
+          className={`btn menu-button ${
+            activeButtons.includes("양식") ? "active" : "btn-light"
+          }`}
+          onClick={() => handleButtonClick("양식")}
+        >
+          양식
+        </button><button
+          className={`btn menu-button ${
+            activeButtons.includes("기타") ? "active" : "btn-light"
+          }`}
+          onClick={() => handleButtonClick("기타")}
+        >
+          기타
+        </button>
       </div>
-      <button className="card-footer btn btn-warning">
-        식당 골라줘!
-      </button>
+      <button className="card-footer btn btn-warning">식당 골라줘!</button>
     </div>
   );
 };
