@@ -1,0 +1,37 @@
+.menu-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.share-button {
+  font-family: "Diphylleia", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 5px;
+  flex: 1;
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: #fae300;
+}
+.share-button:hover {
+  background-color: #efefef;
+}
+
+.map-button {
+  font-family: "Diphylleia", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 5px;
+  flex: 1;
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: #96c9f4;
+}
+.map-button:hover {
+  background-color: #efefef;
+}
+
+.init-button {
+  background-color: #ffb1b1;
+}

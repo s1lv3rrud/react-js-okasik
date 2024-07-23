@@ -33,3 +33,47 @@
 .star:nth-child(4) {
   animation-duration: 5s;
 }
+.card {
+  width: 40%;
+  height: 90vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card-img-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-img-top {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.card-text {
+  font-family: "Grandiflora One", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.3rem;
+}
+
+.card-footer {
+  font-family: "Diphylleia", serif;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: #fae300;
+  border: 0;
+}
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    height: 80vh;
+  }
+
+  .menu-button {
+    font-size: 1rem;
+  }
+}

@@ -33,7 +33,7 @@ const Home = () => {
       <button
         type="button"
         className="btn btn-light login-button"
-        onClick={() => navigate("/story")}
+        onClick={() => navigate("/story/category")}
       >
         🧑‍🍳 로그인 없이 시작하기
       </button>

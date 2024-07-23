@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/CategoryStoryCard.css";
 import man01 from "../assets/images/man01.jpg";
@@ -28,6 +29,7 @@ const images = [
 ];
 
 const CategoryStoryCard = () => {
+  const navigate = useNavigate();
   const randomImage = images[Math.floor(Math.random() * images.length)];
 
   const [activeButtons, setActiveButtons] = useState(["전체"]);
@@ -109,7 +111,9 @@ const CategoryStoryCard = () => {
           기타
         </button>
       </div>
-      <div className="card-footer btn">식당 골라줘!</div>
+      <div className="card-footer btn" onClick={() => navigate("/story/story")}>
+        식당 골라줘!
+      </div>
     </div>
   );
 };
