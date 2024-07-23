@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/SelectMenu.css";
-import StoryCard from "../components/StoryCard";
+import "../styles/SelectCategory.css";
+import CategoryStoryCard from "../components/CategoryStoryCard";
 
 const generateStars = (count) => {
   const stars = [];
@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div className="background d-flex flex-column justify-content-center align-items-center vh-100">
       {generateStars(100)}
-      <StoryCard />
+      <CategoryStoryCard />
     </div>
   );
 };

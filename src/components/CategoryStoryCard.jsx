@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/StoryCard.css";
+import "../styles/CategoryStoryCard.css";
 import man01 from "../assets/images/man01.jpg";
 import man02 from "../assets/images/man02.jpg";
 import man08 from "../assets/images/man08.jpg";
@@ -27,7 +27,7 @@ const images = [
   man11,
 ];
 
-const StoryCard = () => {
+const CategoryStoryCard = () => {
   const randomImage = images[Math.floor(Math.random() * images.length)];
 
   const [activeButtons, setActiveButtons] = useState(["전체"]);
@@ -114,4 +114,4 @@ const StoryCard = () => {
   );
 };
 
-export default StoryCard;
+export default CategoryStoryCard;
