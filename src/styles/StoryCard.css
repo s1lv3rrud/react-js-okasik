@@ -1,9 +1,19 @@
-.card{
+.card {
+  width: 40%;
+  height: 90vh;
   text-align: center;
+  overflow: hidden;
 }
 
-.card-text-container {
-  margin: 20px 0;
+.card-img-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-img-top {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
 }
 
 .card-text {
@@ -11,14 +21,15 @@
   font-weight: 400;
   font-style: normal;
   font-size: 1.3rem;
-  
 }
 
 .menu-buttons {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.menu-button{
+.menu-button {
   font-family: "Diphylleia", serif;
   font-weight: 400;
   font-style: normal;
@@ -29,13 +40,13 @@
 }
 
 .menu-button:hover {
-    background-color: #96C9F4;
+  background-color: #96c9f4;
 }
 
 .menu-button.active {
-    background-color: #96C9F4;
-    color: white;
-  }
+  background-color: #96c9f4;
+  color: white;
+}
 
 .card-footer {
   font-family: "Diphylleia", serif;

@@ -40,14 +40,18 @@ const StoryCard = () => {
         const newActiveButtons = prev.includes(button)
           ? prev.filter((b) => b !== button)
           : [...prev.filter((b) => b !== "전체"), button];
-        return newActiveButtons.length === 0 ||  newActiveButtons.length === 5? ["전체"] : newActiveButtons;
+        return newActiveButtons.length === 0 || newActiveButtons.length === 5
+          ? ["전체"]
+          : newActiveButtons;
       });
     }
   };
 
   return (
     <div className="card">
-      <img src={randomImage} className="card-img-top" />
+      <div className="card-img-container">
+        <img src={randomImage} className="card-img-top" />
+      </div>
       <div className="card-body">
         <p className="card-text">
           야레야레.. 못 말리는 아가씨,
@@ -105,7 +109,7 @@ const StoryCard = () => {
           기타
         </button>
       </div>
-      <button className="card-footer btn btn-warning">식당 골라줘!</button>
+      <div className="card-footer btn">식당 골라줘!</div>
     </div>
   );
 };
