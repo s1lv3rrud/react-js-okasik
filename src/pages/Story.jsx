@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/SelectCategory.css";
+import "../styles/Story.css";
 import CategoryStoryCard from "../components/CategoryStoryCard";
 
 const generateStars = (count) => {
