@@ -1,5 +1,5 @@
 .background {
-  background: linear-gradient(to bottom, #0f67b1, #000000);
+  background: linear-gradient(to bottom, #0f67b1, #102C57);
   position: relative; /* 별 위치를 설정하기 위함 */
   overflow: hidden; /* 별이 배경을 벗어나지 않도록 */
 }
