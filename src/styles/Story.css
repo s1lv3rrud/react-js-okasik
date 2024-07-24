@@ -35,7 +35,7 @@
 }
 .card {
   width: 40%;
-  height: 90vh;
+  max-height: 90vh;
   text-align: center;
   overflow: hidden;
 }
@@ -67,7 +67,7 @@
   background-color: #fae300;
   border: 0;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .card {
     width: 90%;
     height: 80vh;
