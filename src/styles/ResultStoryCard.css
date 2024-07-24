@@ -12,7 +12,7 @@
   flex: 1;
   width: 100%;
   font-size: 1.2rem;
-  background-color: #fae300;
+  background-color: #faffaf;
 }
 .share-button:hover {
   background-color: #efefef;
@@ -26,9 +26,22 @@
   flex: 1;
   width: 100%;
   font-size: 1.2rem;
-  background-color: #96c9f4;
+  background-color: #faffaf;
 }
 .map-button:hover {
+  background-color: #efefef;
+}
+.loc-button {
+  font-family: "Diphylleia", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 5px;
+  flex: 1;
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: #96c9f4;
+}
+.loc-button:hover {
   background-color: #efefef;
 }
 

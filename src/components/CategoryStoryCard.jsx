@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/CategoryStoryCard.css";
+import { getRestaurantRecommendation } from "../services/randomRestaurantService";
 
 const CategoryStoryCard = ({ image }) => {
   const navigate = useNavigate();
-
   const [activeButtons, setActiveButtons] = useState(["전체"]);
+
+  const categoryMap = {
+    전체: "all",
+    한식: "korean",
+    중식: "chinese",
+    일식: "japanese",
+    양식: "western",
+    기타: "others",
+  };
 
   const handleButtonClick = (button) => {
     if (button === "전체") {
@@ -20,6 +29,31 @@ const CategoryStoryCard = ({ image }) => {
           ? ["전체"]
           : newActiveButtons;
       });
+    }
+  };
+
+  const handleGetRecommendation = async () => {
+    const selectedCategories = activeButtons.map(
+      (button) => categoryMap[button]
+    );
+
+    try {
+      const recommendation = await getRestaurantRecommendation(
+        selectedCategories
+      );
+      /*const recommendation = {
+        id: 69446673,
+        name: "미메이라",
+        address: "경기 성남시 분당구 대왕판교로 660",
+        categoryName: "음식점 > 중식",
+        url: "http://place.map.kakao.com/69446673",
+        distance: 33,
+        xaddress: "127.10665836352175",
+        yaddress: "37.40061852529423",
+      };*/
+      navigate("/story/story", { state: { recommendation, image } });
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -85,8 +119,8 @@ const CategoryStoryCard = ({ image }) => {
           기타
         </button>
       </div>
-      <div className="card-footer btn" onClick={() => navigate("/story/story")}>
-        식당 골라줘!
+      <div className="card-footer btn" onClick={handleGetRecommendation}>
+        "식당 골라줘!"
       </div>
     </div>
   );

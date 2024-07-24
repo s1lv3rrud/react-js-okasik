@@ -1,10 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/StoryCard.css";
 
-const StoryCard = ({ image }) => {
+const StoryCard = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { recommendation, image } = location.state || {};
 
   return (
     <div className="card">
@@ -19,7 +21,9 @@ const StoryCard = ({ image }) => {
       </div>
       <div
         className="card-footer btn"
-        onClick={() => navigate("/story/result")}
+        onClick={() =>
+          navigate("/story/result", { state: { recommendation, image } })
+        }
       >
         다음으로
       </div>
