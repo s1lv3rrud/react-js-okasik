@@ -41,16 +41,6 @@ const CategoryStoryCard = ({ image }) => {
       const recommendation = await getRestaurantRecommendation(
         selectedCategories
       );
-      /*const recommendation = {
-        id: 69446673,
-        name: "미메이라",
-        address: "경기 성남시 분당구 대왕판교로 660",
-        categoryName: "음식점 > 중식",
-        url: "http://place.map.kakao.com/69446673",
-        distance: 33,
-        xaddress: "127.10665836352175",
-        yaddress: "37.40061852529423",
-      };*/
       navigate("/story/story", { state: { recommendation, image } });
     } catch (error) {
       console.error(error);
