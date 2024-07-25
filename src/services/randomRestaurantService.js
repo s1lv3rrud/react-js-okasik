@@ -14,13 +14,13 @@ const mockRecommendation = {
 };
 
 export const getRestaurantRecommendation = async (categories) => {
-  return new Promise((resolve) => {
+  /*return new Promise((resolve) => {
     setTimeout(() => {
       resolve(mockRecommendation);
     }, 500);
-  });
+  });*/
   try {
-    const response = await axios.post(`${BASE_URL}/kakao/v1/category`, {
+    const response = await axios.post(`${BASE_URL}/v1/categorie`, {
       category: categories,
     });
     return response.data;
