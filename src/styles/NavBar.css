@@ -1,10 +1,13 @@
 .navbar {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: #102c57;
   color: white;
+  z-index: 100;
+  width: 100%;
 }
 
 .navbar-text {
