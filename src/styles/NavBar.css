@@ -1,0 +1,68 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #102c57;
+  color: white;
+}
+
+.navbar-text {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: "Grandiflora One", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-menu-button {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar-slide-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #102c57;
+  color: white;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.navbar-slide-menu.open {
+  display: block;
+  right: 0;
+}
+
+.navbar-slide-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+.navbar-close-button {
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+  .navbar-menu-button {
+    display: block;
+  }
+}
