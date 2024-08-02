@@ -16,6 +16,10 @@ const generateStars = (count) => {
   return stars;
 };
 
+const handleKakaoLogin = () => {
+  window.location.href = `${BASE_URL}/v1/login/kakao`;
+};
+
 const Home = () => {
   const navigate = useNavigate();
   return (
@@ -27,6 +31,7 @@ const Home = () => {
         <div className="mb-4"></div>
         <button type="button" className="btn login-button">
           <img
+            onClick={handleKakaoLogin}
             src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg"
             alt="카카오 로그인"
             className="kakao-login-button-image"
