@@ -22,6 +22,7 @@ export const getRestaurantRecommendation = async (categories) => {
   try {
     const response = await axios.post(`${BASE_URL}/v1/category`, {
       category: categories,
+      withCredentials: true,
     });
     return response.data;
   } catch (error) {
