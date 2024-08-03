@@ -25,6 +25,13 @@ button {
   color: white;
 }
 
+@media (max-width: 768px) {
+  .logo-text{
+    font-size: 3rem;
+  }
+}
+
+
 .text-left {
   margin-left: -50px;
 }
