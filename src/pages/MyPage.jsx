@@ -47,10 +47,21 @@ const MyPage = () => {
               alt="프로필"
               className="profile-image"
             />
-            <div>
-              <p>닉네임 {user.nickname}</p>
-              <p>이메일 {user.email}</p>
-              <p>성별 {user.gender === "FEMALE" ? "여성" : "남성"}</p>
+            <div className="user-details">
+              <p>
+                <span className="label">닉네임</span>
+                <span className="value">{user.nickname}</span>
+              </p>
+              <p>
+                <span className="label">이메일</span>
+                <span className="value">{user.email}</span>
+              </p>
+              <p>
+                <span className="label">성별</span>
+                <span className="value">
+                  {user.gender === "FEMALE" ? "여성" : "남성"}
+                </span>
+              </p>
             </div>
           </div>
         </div>
