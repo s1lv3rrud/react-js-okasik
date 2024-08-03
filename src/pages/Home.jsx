@@ -16,7 +16,7 @@ const Home = () => {
     alert("로그인에 성공했습니다!");
     dispatch(loginSuccess(true));
     const BASE_URL = import.meta.env.VITE_BASE_URL;
-    //window.location.href = `${BASE_URL}/v1/login/kakao`;
+    window.location.href = `${BASE_URL}/v1/login/kakao`;
   };
 
   // 로그인 상태 확인을 위한
@@ -54,7 +54,7 @@ const Home = () => {
             <button
               type="button"
               className="btn btn-light login-button"
-              onClick={handleKakaoLogout}
+              onClick={() => navigate("/story/category")}
             >
               🎬 시작하기
             </button>
