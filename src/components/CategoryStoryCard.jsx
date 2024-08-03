@@ -46,6 +46,7 @@ const CategoryStoryCard = ({ image }) => {
       console.error(error);
     }
   };
+  const isWoman = image?.includes("woman");
 
   return (
     <div className="card">
@@ -54,7 +55,7 @@ const CategoryStoryCard = ({ image }) => {
       </div>
       <div className="card-body">
         <p className="card-text">
-          야레야레.. 못 말리는 아가씨,
+          야레야레.. 못 말리는 {isWoman ? "도련님" : "아가씨"},
           <br />
           카테고리를 선택해주세요.
         </p>
