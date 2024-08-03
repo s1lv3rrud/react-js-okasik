@@ -18,6 +18,7 @@ import woman04 from "../assets/images/woman04.jpg";
 import woman05 from "../assets/images/woman05.jpg";
 import woman06 from "../assets/images/woman06.jpg";
 import woman07 from "../assets/images/woman07.jpg";
+import Layout from "../components/Layout";
 
 const images = [
   man01,
@@ -35,36 +36,25 @@ const images = [
   woman07,
 ];
 
-const generateStars = (count) => {
-  const stars = [];
-  for (let i = 0; i < count; i++) {
-    const style = {
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-    };
-    stars.push(<div key={i} className="star" style={style}></div>);
-  }
-  return stars;
-};
-
 const Story = () => {
   const randomImage = images[Math.floor(Math.random() * images.length)];
 
   return (
-    <div className="background d-flex flex-column justify-content-center align-items-center vh-100">
-      {generateStars(100)}
-      <Routes>
-        <Route
-          path="/category"
-          element={<CategoryStoryCard image={randomImage} />}
-        />
-        <Route path="/story" element={<StoryCard image={randomImage} />} />
-        <Route
-          path="/result"
-          element={<ResultStoryCard image={randomImage} />}
-        />
-      </Routes>
-    </div>
+    <Layout>
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+        <Routes>
+          <Route
+            path="/category"
+            element={<CategoryStoryCard image={randomImage} />}
+          />
+          <Route path="/story" element={<StoryCard image={randomImage} />} />
+          <Route
+            path="/result"
+            element={<ResultStoryCard image={randomImage} />}
+          />
+        </Routes>
+      </div>
+    </Layout>
   );
 };
 

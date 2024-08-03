@@ -6,31 +6,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Home.css";
 import Layout from "../components/Layout";
 
-const generateStars = (count) => {
-  const stars = [];
-  for (let i = 0; i < count; i++) {
-    const style = {
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-    };
-    stars.push(<div key={i} className="star" style={style}></div>);
-  }
-  return stars;
-};
-
 const Home = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
 
   const handleKakaoLogin = () => {
-    //alert("로그인에 성공했습니다!");
-    //dispatch(loginSuccess(true));
+    alert("로그인에 성공했습니다!");
+    dispatch(loginSuccess(true));
     const BASE_URL = import.meta.env.VITE_BASE_URL;
-    window.location.href = `${BASE_URL}/v1/login/kakao`;
+    //window.location.href = `${BASE_URL}/v1/login/kakao`;
   };
 
-  // 로그인 상태 확인을 위한 
+  // 로그인 상태 확인을 위한
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const loginStatus = queryParams.get("login");
@@ -46,8 +34,7 @@ const Home = () => {
 
   return (
     <Layout>
-      <div className="background d-flex flex-column justify-content-center align-items-center vh-100">
-        {generateStars(100)}
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
         <h1 className="logo-text text-left">잘먹어요</h1>
         <h1 className="logo-text text-right">아가씨</h1>
         <div className="mb-4"></div>
