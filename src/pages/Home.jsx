@@ -13,6 +13,9 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const handleKakaoLogin = () => {
+    //alert("로그인에 성공했습니다!");
+    //dispatch(loginSuccess(true));
+    //navigate("/");
     const BASE_URL = import.meta.env.VITE_BASE_URL;
     window.location.href = `${BASE_URL}/v1/login/kakao`;
   };
