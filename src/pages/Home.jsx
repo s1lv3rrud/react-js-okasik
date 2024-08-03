@@ -25,7 +25,7 @@ const Home = () => {
     if (loginStatus === "success") {
       alert("로그인에 성공했습니다!");
       dispatch(loginSuccess(true));
-      navigate("/story/category");
+      navigate("/");
     } else if (loginStatus === "failed") {
       alert("로그인에 실패했습니다.");
     }
