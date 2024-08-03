@@ -13,6 +13,14 @@ const NavBar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleKakaoLogout = () => {
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
+    window.location.href = `${BASE_URL}/v1/logout/kakao`;
+    setIsLoggedIn(false);
+    alert("로그아웃 되었습니다.");
+    navigate("/");
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -21,6 +29,11 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="navbar-links">
+        {isLoggedIn && (
+          <Link onClick={handleKakaoLogout} className="navbar-text">
+            로그아웃
+          </Link>
+        )}
         {isLoggedIn && (
           <Link to="/mypage" className="navbar-text">
             마이페이지
