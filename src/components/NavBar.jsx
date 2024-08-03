@@ -66,9 +66,9 @@ const NavBar = () => {
             마이페이지
           </Link>
         )}
-        <Link to="/restaurants" onClick={toggleMenu} className="navbar-text">
+        {/*<Link to="/restaurants" onClick={toggleMenu} className="navbar-text">
           주변 식당
-        </Link>
+        </Link>*/}
       </div>
     </nav>
   );
