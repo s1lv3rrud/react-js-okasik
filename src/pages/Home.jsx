@@ -53,8 +53,7 @@ const Home = () => {
         {isLoggedIn ? (
           <div>
             <button
-              type="button"
-              className="btn btn-light login-button"
+              className="btn start-button"
               onClick={() => navigate("/story/category")}
             >
               🎬 시작하기

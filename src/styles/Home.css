@@ -12,6 +12,17 @@ button {
   font-size: 0.8rem;
 }
 
+.start-button {
+  width: 183px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font-size: 0.8rem;
+  background-color: #faffaf;
+}
+
 .kakao-login-button-image {
   width: 100%;
   height: auto;
@@ -26,11 +37,10 @@ button {
 }
 
 @media (max-width: 768px) {
-  .logo-text{
+  .logo-text {
     font-size: 3rem;
   }
 }
-
 
 .text-left {
   margin-left: -50px;
