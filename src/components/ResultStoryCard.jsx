@@ -22,8 +22,8 @@ const ResultStoryCard = () => {
         </p>
       </div>
       <div className="menu-buttons">
-        <button className="btn share-button">💬 카톡공유</button>
-        <button className="btn loc-button">📍 위치보기</button>
+        {/*<button className="btn share-button">💬 카톡공유</button>
+        <button className="btn loc-button">📍 위치보기</button>*/}
         <a
           href={recommendation?.url}
           target="_blank"
