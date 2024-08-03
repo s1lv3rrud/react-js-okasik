@@ -41,7 +41,7 @@ const Story = () => {
 
   return (
     <Layout>
-      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100" style={{paddingTop: `60px`}}>
         <Routes>
           <Route
             path="/category"
