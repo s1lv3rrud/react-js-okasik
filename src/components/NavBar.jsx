@@ -1,10 +1,14 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { loginSuccess, logout } from "../features/auth/authSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/NavBar.css";
 
 const NavBar = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // 모바일 환경의 사이드 메뉴 상태 관리
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +20,9 @@ const NavBar = () => {
   const handleKakaoLogout = () => {
     const BASE_URL = import.meta.env.VITE_BASE_URL;
     window.location.href = `${BASE_URL}/v1/logout/kakao`;
-    setIsLoggedIn(false);
+
+    // Redux 상태 업데이트 및 로그아웃 처리
+    dispatch(logout());
     alert("로그아웃 되었습니다.");
     navigate("/");
   };
@@ -50,6 +56,11 @@ const NavBar = () => {
         <div className="navbar-close-button" onClick={toggleMenu}>
           ✕
         </div>
+        {isLoggedIn && (
+          <Link onClick={handleKakaoLogout} className="navbar-text">
+            로그아웃
+          </Link>
+        )}
         {isLoggedIn && (
           <Link to="/mypage" onClick={toggleMenu} className="navbar-text">
             마이페이지

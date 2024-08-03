@@ -1,0 +1,26 @@
+.mypage-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  width: 300px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
