@@ -20,7 +20,7 @@ const Home = () => {
     window.location.href = `${BASE_URL}/v1/login/kakao`;
   };
 
-  // 로그인 상태 확인을 위한
+  // 로그인 상태 확인을 위한 useEffect
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const loginStatus = queryParams.get("login");
