@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../features/auth/authSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Home.css";
 import Layout from "../components/Layout";
@@ -16,26 +18,31 @@ const generateStars = (count) => {
   return stars;
 };
 
-const handleKakaoLogin = () => {
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
-  window.location.href = `${BASE_URL}/v1/login/kakao`;
-};
-
 const Home = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
 
+  const handleKakaoLogin = () => {
+    //alert("로그인에 성공했습니다!");
+    //dispatch(loginSuccess(true));
+    const BASE_URL = import.meta.env.VITE_BASE_URL;
+    window.location.href = `${BASE_URL}/v1/login/kakao`;
+  };
+
+  // 로그인 상태 확인을 위한 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const loginStatus = queryParams.get("login");
 
     if (loginStatus === "success") {
       alert("로그인에 성공했습니다!");
+      dispatch(loginSuccess(true));
       navigate("/story/category");
     } else if (loginStatus === "failed") {
       alert("로그인에 실패했습니다.");
     }
-  }, [location]);
+  }, [location, dispatch, navigate]);
 
   return (
     <Layout>
