@@ -57,6 +57,11 @@ const NavBar = () => {
           ✕
         </div>
         {isLoggedIn && (
+          <Link onClick={handleKakaoLogout} className="navbar-text">
+            로그아웃
+          </Link>
+        )}
+        {isLoggedIn && (
           <Link to="/mypage" onClick={toggleMenu} className="navbar-text">
             마이페이지
           </Link>
