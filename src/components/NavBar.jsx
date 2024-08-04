@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginSuccess, logout } from "../features/auth/authSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/NavBar.css";
+import logo from "../assets/logo.png";
 
 const NavBar = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -29,7 +30,8 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-brand">
+      <div className="flex navbar-brand">
+        <img src={logo} alt="Logo" className="navbar-logo"></img>
         <Link to="/" className="navbar-text">
           잘먹어요 아가씨
         </Link>
