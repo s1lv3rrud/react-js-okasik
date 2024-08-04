@@ -44,3 +44,25 @@
     font-size: 1rem;
   }
 }
+
+.fade-enter {
+  opacity: 0;
+  filter: blur(5px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  filter: blur(0);
+  transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.fade-exit {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  filter: blur(5px);
+  transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
