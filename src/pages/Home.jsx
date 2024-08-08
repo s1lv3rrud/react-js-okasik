@@ -31,7 +31,8 @@ const Home = () => {
       if (event.data.type === "oauthCallback") {
         if (event.data.success) {
           console.log("OAuth 성공, 세션이 설정되었습니다.");
-          dispatch(loginSuccess(true));
+          isLoggedIn = true;
+          //dispatch(loginSuccess(true));
           // 필요한 추가 작업 수행
         } else {
           console.error("OAuth 실패");
