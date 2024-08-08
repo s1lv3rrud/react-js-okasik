@@ -11,6 +11,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/story/*" element={<Story />} />
         <Route path="/mypage" element={<MyPage />} />
+        <Route path="/oauth-callback" element={<OAuthCallBack />} />
       </Routes>
     </Router>
   );

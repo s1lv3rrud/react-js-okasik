@@ -17,9 +17,36 @@ const Home = () => {
     //dispatch(loginSuccess(true));
     //navigate("/");
     const BASE_URL = import.meta.env.VITE_BASE_URL;
-    window.location.href = `${BASE_URL}/v1/login/kakao`;
+    //window.location.href = `${BASE_URL}/v1/login/kakao`;
+    window.open(`${BASE_URL}/v1/login/kakao`, "oauth", "width=600,height=600");
   };
 
+  useEffect(() => {
+    const FRONT_URL = import.meta.env.VITE_FRONT_URL;
+    const handleMessage = (event) => {
+      if (event.origin !== `${FRONT_URL}`) {
+        return;
+      }
+
+      if (event.data.type === "oauthCallback") {
+        if (event.data.success) {
+          console.log("OAuth 성공, 세션이 설정되었습니다.");
+          dispatch(loginSuccess(true));
+          // 필요한 추가 작업 수행
+        } else {
+          console.error("OAuth 실패");
+        }
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+
+    return () => {
+      window.removeEventListener("message", handleMessage);
+    };
+  }, []);
+
+  /*
   // 로그인 상태 확인을 위한 useEffect
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -33,6 +60,7 @@ const Home = () => {
       alert("로그인에 실패했습니다.");
     }
   }, [location, dispatch, navigate]);
+  */
 
   const handleKakaoLogout = () => {
     const BASE_URL = import.meta.env.VITE_BASE_URL;
