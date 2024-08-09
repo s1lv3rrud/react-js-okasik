@@ -15,7 +15,7 @@
   width: 30px;
   height: 30px;
   margin-right: 10px;
-  filter: invert(1);
+  /*filter: invert(1);*/
 }
 
 .navbar-text {
