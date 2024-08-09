@@ -17,7 +17,7 @@ const Home = () => {
     //dispatch(loginSuccess(true));
     //navigate("/");
     const BASE_URL = import.meta.env.VITE_BASE_URL;
-    window.location.href = `${BASE_URL}/v1/login/kakao`;
+    window.location.href = `${BASE_URL}/oauth2/authorization/kakao`;
   };
 
   // 로그인 상태 확인을 위한 useEffect
